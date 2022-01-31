@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQJ-Ba-zuf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,68 +11,80 @@
         <!--View Controller-->
         <scene sceneID="kQN-Wu-Gn3">
             <objects>
-                <viewController id="v3K-Rw-lfL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="root" id="v3K-Rw-lfL" customClass="ViewController" customModule="hwk10_NavCtrl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skU-2m-0fY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C10-et-019">
+                                <rect key="frame" x="120" y="206" width="174" height="82"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="QX5-kZ-LJ3"/>
+                                    <constraint firstAttribute="width" constant="174" id="Wtp-57-vR2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Game 1">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
+                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onGame1Button:" destination="v3K-Rw-lfL" eventType="touchUpInside" id="Gsn-Hh-EcU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzP-TI-Sec">
+                                <rect key="frame" x="120" y="296" width="174" height="82"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="4AT-YY-Oda"/>
+                                    <constraint firstAttribute="height" constant="82" id="rlu-Ap-4cd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Game 2">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
+                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onGame2Button:" destination="v3K-Rw-lfL" eventType="touchUpInside" id="8uf-iP-gDw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pD-X9-tLc">
+                                <rect key="frame" x="120" y="386" width="174" height="82"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="Sd8-d0-tge"/>
+                                    <constraint firstAttribute="height" constant="82" id="fOz-tV-D5y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Game 3">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
+                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onGame3Button:" destination="v3K-Rw-lfL" eventType="touchUpInside" id="2PK-qB-Riy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jeX-PF-ZT2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="C10-et-019" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="2v7-cX-6WT"/>
+                            <constraint firstItem="8pD-X9-tLc" firstAttribute="top" secondItem="LzP-TI-Sec" secondAttribute="bottom" constant="8" symbolic="YES" id="EID-Jx-HoZ"/>
+                            <constraint firstItem="C10-et-019" firstAttribute="top" secondItem="jeX-PF-ZT2" secondAttribute="top" constant="118" id="Q2c-Zq-87y"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="top" secondItem="C10-et-019" secondAttribute="bottom" constant="8" symbolic="YES" id="hJB-e7-E2U"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="nXf-3z-Vq9"/>
+                            <constraint firstItem="8pD-X9-tLc" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="oYd-Ka-YIy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LlT-S3-4TD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymB-Zd-vcF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368" y="123"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bBo-WD-PAG">
-            <objects>
-                <viewController id="0YF-Qf-j7Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gze-BB-dQe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aUY-m4-peQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m4O-6j-als" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1243" y="-117"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Kuh-GP-jVh">
-            <objects>
-                <viewController id="sUA-mM-ea9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="awG-T2-0v9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jgA-MM-g0B"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K9L-2S-SSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1234" y="526"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ges-2u-Mxg">
-            <objects>
-                <viewController id="B4h-Te-pXR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6bK-a0-tTf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8yd-6q-ggY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B3b-Ku-h42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1934" y="249"/>
+            <point key="canvasLocation" x="366.66666666666669" y="122.54464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K8u-Zu-8Dd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wG8-Su-QuF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="aQJ-Ba-zuf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ziz-mw-QBi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -83,13 +94,20 @@
                         <segue destination="v3K-Rw-lfL" kind="relationship" relationship="rootViewController" id="QMH-PL-qel"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wG8-Su-QuF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-411" y="123"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
