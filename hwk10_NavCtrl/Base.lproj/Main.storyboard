@@ -17,11 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C10-et-019">
-                                <rect key="frame" x="120" y="206" width="174" height="82"/>
+                                <rect key="frame" x="144.5" y="317" width="125.5" height="82"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="QX5-kZ-LJ3"/>
-                                    <constraint firstAttribute="width" constant="174" id="Wtp-57-vR2"/>
+                                    <constraint firstAttribute="height" constant="82" id="vc4-mS-mIE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Game 1">
@@ -33,11 +32,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzP-TI-Sec">
-                                <rect key="frame" x="120" y="296" width="174" height="82"/>
+                                <rect key="frame" x="144.5" y="407" width="125.5" height="82"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="174" id="4AT-YY-Oda"/>
-                                    <constraint firstAttribute="height" constant="82" id="rlu-Ap-4cd"/>
+                                    <constraint firstAttribute="height" constant="82" id="3Lg-NU-EEN"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Game 2">
@@ -49,11 +47,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pD-X9-tLc">
-                                <rect key="frame" x="120" y="386" width="174" height="82"/>
+                                <rect key="frame" x="144.5" y="497" width="125.5" height="82"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="174" id="Sd8-d0-tge"/>
-                                    <constraint firstAttribute="height" constant="82" id="fOz-tV-D5y"/>
+                                    <constraint firstAttribute="height" constant="82" id="NpR-aH-RU9"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Game 3">
@@ -68,12 +65,14 @@
                         <viewLayoutGuide key="safeArea" id="jeX-PF-ZT2"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="C10-et-019" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="2v7-cX-6WT"/>
-                            <constraint firstItem="8pD-X9-tLc" firstAttribute="top" secondItem="LzP-TI-Sec" secondAttribute="bottom" constant="8" symbolic="YES" id="EID-Jx-HoZ"/>
-                            <constraint firstItem="C10-et-019" firstAttribute="top" secondItem="jeX-PF-ZT2" secondAttribute="top" constant="118" id="Q2c-Zq-87y"/>
-                            <constraint firstItem="LzP-TI-Sec" firstAttribute="top" secondItem="C10-et-019" secondAttribute="bottom" constant="8" symbolic="YES" id="hJB-e7-E2U"/>
-                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="nXf-3z-Vq9"/>
-                            <constraint firstItem="8pD-X9-tLc" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="oYd-Ka-YIy"/>
+                            <constraint firstItem="8pD-X9-tLc" firstAttribute="top" secondItem="LzP-TI-Sec" secondAttribute="bottom" constant="8" symbolic="YES" id="Ccd-iA-cJP"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="Lxv-xs-xXI"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerX" secondItem="skU-2m-0fY" secondAttribute="centerX" id="W3d-qk-FcL"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerY" secondItem="skU-2m-0fY" secondAttribute="centerY" id="WVc-R1-Lsn"/>
+                            <constraint firstItem="C10-et-019" firstAttribute="centerX" secondItem="LzP-TI-Sec" secondAttribute="centerX" id="a80-cH-mlA"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="top" secondItem="C10-et-019" secondAttribute="bottom" constant="8" symbolic="YES" id="hg2-Ok-ogo"/>
+                            <constraint firstItem="8pD-X9-tLc" firstAttribute="centerX" secondItem="LzP-TI-Sec" secondAttribute="centerX" id="jeM-Wp-dUZ"/>
+                            <constraint firstItem="LzP-TI-Sec" firstAttribute="centerY" secondItem="skU-2m-0fY" secondAttribute="centerY" id="z6G-O3-CzZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LlT-S3-4TD"/>

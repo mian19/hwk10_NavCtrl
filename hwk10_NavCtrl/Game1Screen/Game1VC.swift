@@ -9,6 +9,7 @@ import UIKit
 
 class Game1VC: UIViewController {
     private var circle: UIView!
+    private let radiusOfCircle: CGFloat = 50
     
     override func loadView() {
         let custonView = UIView(frame: UIScreen.main.bounds)
@@ -22,19 +23,27 @@ class Game1VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Game1"
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.3176, blue: 0, alpha: 1.0)
         
+        workWithNavCtrl()
+        workWithRecognizers()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        circle.frame = CGRect(x: view.bounds.midX - radiusOfCircle, y: view.bounds.midY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2)
+        circle.layer.cornerRadius = circle.frame.width / 2
+        circle.layer.masksToBounds = true
+    }
+    
+    private func workWithNavCtrl() {
+        self.navigationItem.title = "Game 1"
+        self.navigationController?.navigationBar.backgroundColor = .systemBrown
+    }
+    
+    private func workWithRecognizers() {
         let tapRecognizerVC = UITapGestureRecognizer(target: self, action: #selector(tapVC))
         let tapRecognizerCircle = UITapGestureRecognizer(target: self, action: #selector(tapCircle))
         view.addGestureRecognizer(tapRecognizerVC)
         circle.addGestureRecognizer(tapRecognizerCircle)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        circle.frame = CGRect(x: view.bounds.midX - 25, y: view.bounds.midY - 25, width: 50, height: 50)
-        circle.layer.cornerRadius = circle.frame.width / 2
-        circle.layer.masksToBounds = true
     }
     
     @objc private func tapVC(sender: UITapGestureRecognizer) {
@@ -49,7 +58,7 @@ class Game1VC: UIViewController {
     }
     
     private func putCircleOnView(point: CGPoint) {
-        let radiusOfCircle = circle.frame.width / 2
+        
         let minYforCircle = (self.navigationController?.navigationBar.frame.maxY)!
         var setX: CGFloat!
         var setY: CGFloat!
@@ -70,7 +79,7 @@ class Game1VC: UIViewController {
             setY = point.y
         }
         
-        circle.frame = CGRect(x: setX - radiusOfCircle, y: setY - radiusOfCircle, width: 50, height: 50 )
+        circle.frame = CGRect(x: setX - radiusOfCircle, y: setY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2 )
         circle.isHidden = false
     }
     
