@@ -30,6 +30,7 @@ class Game3VC: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        print("viewWillLayoutSubviews")
         circle.frame = CGRect(x: view.bounds.midX - radiusOfCircle, y: view.bounds.midY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2)
         circle.layer.cornerRadius = radiusOfCircle
         circle.layer.masksToBounds = true

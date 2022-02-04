@@ -17,21 +17,24 @@ class Game1VC: UIViewController {
         view.backgroundColor = UIColor(red: 0.7373, green: 0.6745, blue: 0, alpha: 1.0)
         circle = UIView()
         circle.backgroundColor = .red
-        
+        circle.frame = CGRect(x: view.bounds.midX - radiusOfCircle , y: view.bounds.midY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2 )
+        circle.layer.cornerRadius = circle.frame.width / 2
+        circle.layer.masksToBounds = true
         view.addSubview(circle)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         workWithNavCtrl()
         workWithRecognizers()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(rotatedPhone), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    override func viewWillLayoutSubviews() {
-        circle.frame = CGRect(x: view.bounds.midX - radiusOfCircle, y: view.bounds.midY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2)
-        circle.layer.cornerRadius = circle.frame.width / 2
-        circle.layer.masksToBounds = true
+    @objc func rotatedPhone() {
+        if UIDevice.current.orientation.isLandscape || UIDevice.current.orientation.isPortrait {
+            circle.isHidden = true
+        }
     }
     
     private func workWithNavCtrl() {
@@ -42,23 +45,22 @@ class Game1VC: UIViewController {
     private func workWithRecognizers() {
         let tapRecognizerVC = UITapGestureRecognizer(target: self, action: #selector(tapVC))
         let tapRecognizerCircle = UITapGestureRecognizer(target: self, action: #selector(tapCircle))
-        view.addGestureRecognizer(tapRecognizerVC)
         circle.addGestureRecognizer(tapRecognizerCircle)
+        view.addGestureRecognizer(tapRecognizerVC)
     }
     
     @objc private func tapVC(sender: UITapGestureRecognizer) {
+        let currentTap = sender.location(in: view)
         if circle.isHidden {
-            let currentTap = sender.location(in: view)
             putCircleOnView(point: currentTap)
         }
     }
     
     @objc private func tapCircle(sender: UITapGestureRecognizer) {
-        circle.isHidden.toggle()
+        circle.isHidden = true
     }
-    
+
     private func putCircleOnView(point: CGPoint) {
-        
         let minYforCircle = (self.navigationController?.navigationBar.frame.maxY)!
         var setX: CGFloat!
         var setY: CGFloat!
@@ -79,7 +81,9 @@ class Game1VC: UIViewController {
             setY = point.y
         }
         
-        circle.frame = CGRect(x: setX - radiusOfCircle, y: setY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2 )
+        circle.frame = CGRect(x: setX - radiusOfCircle, y: setY - radiusOfCircle, width: radiusOfCircle * 2, height: radiusOfCircle * 2)
+        circle.layer.cornerRadius = circle.frame.width / 2
+        circle.layer.masksToBounds = true
         circle.isHidden = false
     }
     
